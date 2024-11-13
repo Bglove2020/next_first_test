@@ -1,3 +1,4 @@
+import { NextResponse } from 'next/server'
 import { newClient } from '../../utils/supabase/client';
 
 export async function GET() {
@@ -6,5 +7,5 @@ export async function GET() {
     const {data} = await supabase.from("notes").select();
     console.log('data',data)
 
-    return Response.json({ data })
+    return NextResponse.json({data:data})
 }
