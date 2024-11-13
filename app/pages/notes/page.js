@@ -5,14 +5,10 @@ export default function pages() {
 
 
     useEffect(() => {
-        fetch('/api').then(res => {
-            console.log('res',res)
-            console.log('res.result',res.result)
-            console.log('res.data',res.data)
-            if(res.data){
-                setList(res.result.data)
-            }
-        }).catch(err => console.log(err))
+        fetch('/api').then(response => response.json()).then((res)=>{
+            console.log(res)
+            if(res.data) setList(res.data)
+        });
     },[])
     return(
         <div>
