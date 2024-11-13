@@ -7,8 +7,10 @@ export default function pages() {
     useEffect(() => {
         fetch('/api').then(res => {
             console.log(res)
+            console.log(res.result)
+            console.log(res.result.data)
             if(res.data){
-                setList(res.data)
+                setList(res.result.data)
             }
         }).catch(err => console.log(err))
     },[])
