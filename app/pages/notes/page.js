@@ -14,9 +14,10 @@ export default function pages() {
         <div>
             <div>你好</div>
             <div>很高兴见到你</div>
+            <div>这是你的消息</div>
             {
                 noteslist.map((item,index) => {
-                    return (<div>{item}</div>)
+                    return (<div>{item.title}</div>)
                 })
             }
         </div>
