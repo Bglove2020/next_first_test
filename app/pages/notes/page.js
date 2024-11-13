@@ -6,9 +6,9 @@ export default function pages() {
 
     useEffect(() => {
         fetch('/api').then(res => {
-            console.log(res)
-            console.log(res.result)
-            console.log(res.result.data)
+            console.log('res',res)
+            console.log('res.result',res.result)
+            console.log('res.data',res.data)
             if(res.data){
                 setList(res.result.data)
             }
