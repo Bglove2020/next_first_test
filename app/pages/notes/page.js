@@ -5,22 +5,19 @@ export default function pages() {
 
 
     useEffect(() => {
-        fetch('/api').then(res => {
-            console.log('res',res)
-            console.log('res.result',res.result)
-            console.log('res.data',res.data)
-            if(res.data){
-                setList(res.result.data)
-            }
-        }).catch(err => console.log(err))
+        fetch('/api').then(response => response.json()).then((res)=>{
+            console.log(res)
+            if(res.data) setList(res.data)
+        });
     },[])
     return(
         <div>
             <div>你好</div>
             <div>很高兴见到你</div>
+            <div>这是你的消息</div>
             {
                 noteslist.map((item,index) => {
-                    return (<div>{item}</div>)
+                    return (<div>{item.title}</div>)
                 })
             }
         </div>
