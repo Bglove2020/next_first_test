@@ -67,8 +67,7 @@ export default function orderList() {
                         )
                     })
                 }
-            </div>) : <h1 className="text-center font-semibold text-lg mt-5">暂无数据</h1>
-            }
+            </div>) : <h1 className="text-center font-semibold text-lg mt-5">暂无数据</h1>}
         </div>
     );
 }
