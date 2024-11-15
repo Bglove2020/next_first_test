@@ -7,7 +7,7 @@ export async function GET(request) {
 
     const result = await supabase.from('device_account')
         .select(
-            'deviceAccount,deviceState,pendingOrderNum,ordertable(*)',
+            'deviceaccount,devicestate,pendingordernum,ordertable(*)',
         )
     console.log(result)
     return NextResponse.json({data:rows}, { status: 200 })
